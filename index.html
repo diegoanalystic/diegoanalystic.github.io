@@ -2,96 +2,74 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>HashAnalyst - 0x7B</title>
+    <title>HashFinder 0x7B</title>
     <style>
-        /* Style DiegoAnalystic Modifié */
+        /* Style DiegoAnalystic - Version Noire */
         body {
             background: #0a0e14;
             color: #c0c9d5;
-            font-family: 'Consolas', monospace;
+            font-family: 'Courier New', monospace;
             margin: 0;
             padding: 2rem;
         }
 
         .container {
             max-width: 800px;
-            margin: 3rem auto;
-            border: 1px solid #1f6feb;
+            margin: 20px auto;
+            border: 1px solid #2ea043;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 20px;
             background: #0d1117;
         }
 
-        .search-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 2rem;
-        }
-
         #hashInput {
-            flex-grow: 1;
+            width: 70%;
             padding: 12px;
             background: #161b22;
             border: 1px solid #30363d;
             color: #c9d1d9;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 4px;
+            margin-right: 10px;
         }
 
         #searchButton {
-            background: #1f6feb;
+            padding: 12px 25px;
+            background: #238636;
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: 0.3s;
         }
 
         #searchButton:hover {
-            background: #2a7dea;
+            background: #2ea043;
         }
 
-        .result-box {
-            border: 1px solid #21262d;
-            padding: 1rem;
-            border-radius: 6px;
+        #resultFrame {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #30363d;
+            margin-top: 20px;
             background: #161b22;
-            min-height: 200px;
-        }
-
-        .highlight {
-            color: #7ee787;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>HashAnalyst <span class="highlight">// 0x7B</span></h1>
+        <h1>HashFinder <span style="color: #2ea043;">// 0x7B</span></h1>
         
-        <div class="search-box">
-            <input type="text" id="hashInput" placeholder="Entrez un hash (ex: 7b4a7d...)" />
-            <button id="searchButton">Analyser</button>
-        </div>
+        <form id="hashForm" action="https://diegoanalystic.github.io/hashenterparlutilisateur.html" method="GET" target="resultFrame">
+            <input type="text" id="hashInput" name="hash" placeholder="Entrez un hash (ex: 7b4a7d...)" required />
+            <button type="submit" id="searchButton">Analyser</button>
+        </form>
 
-        <div class="result-box" id="result">
-            <!-- Résultats ici via JS -->
-        </div>
+        <iframe id="resultFrame" name="resultFrame" sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
 
     <script>
-        document.getElementById('searchButton').addEventListener('click', function() {
-            const hash = document.getElementById('hashInput').value;
-            const resultDiv = document.getElementById('result');
-            
-            // Simulation d'analyse
-            resultDiv.innerHTML = `
-                <h3>Résultat pour <span class="highlight">${hash}</span></h3>
-                <p>Type: SHA-256</p>
-                <p>Statut: <span style="color: #7ee787">Non corrompu</span></p>
-                <p>Dernière vérification: ${new Date().toLocaleString()}</p>
-            `;
-        });
+        // Optionnel : Auto-focus sur le champ de recherche
+        document.getElementById('hashInput').focus();
     </script>
 </body>
 </html>
