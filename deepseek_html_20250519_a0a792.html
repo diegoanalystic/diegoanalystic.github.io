@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HashFinder 0x7B</title>
+    <style>
+        /* Style DiegoAnalystic - Version Noire */
+        body {
+            background: #0a0e14;
+            color: #c0c9d5;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #2ea043;
+            border-radius: 8px;
+            padding: 20px;
+            background: #0d1117;
+        }
+
+        #hashInput {
+            width: 70%;
+            padding: 12px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        #searchButton {
+            padding: 12px 25px;
+            background: #238636;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #searchButton:hover {
+            background: #2ea043;
+        }
+
+        #resultFrame {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #30363d;
+            margin-top: 20px;
+            background: #161b22;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HashFinder <span style="color: #2ea043;">// 0x7B</span></h1>
+        
+        <form id="hashForm" action="https://diegoanalystic.github.io/hashenterparlutilisateur.html" method="GET" target="resultFrame">
+            <input type="text" id="hashInput" name="hash" placeholder="Entrez un hash (ex: 7b4a7d...)" required />
+            <button type="submit" id="searchButton">Analyser</button>
+        </form>
+
+        <iframe id="resultFrame" name="resultFrame" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+
+    <script>
+        // Optionnel : Auto-focus sur le champ de recherche
+        document.getElementById('hashInput').focus();
+    </script>
+</body>
+</html>
