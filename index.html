@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HashAnalyst - 0x7B</title>
+    <style>
+        /* Style DiegoAnalystic Modifié */
+        body {
+            background: #0a0e14;
+            color: #c0c9d5;
+            font-family: 'Consolas', monospace;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            border: 1px solid #1f6feb;
+            border-radius: 8px;
+            padding: 2rem;
+            background: #0d1117;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        #hashInput {
+            flex-grow: 1;
+            padding: 12px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        #searchButton {
+            background: #1f6feb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #searchButton:hover {
+            background: #2a7dea;
+        }
+
+        .result-box {
+            border: 1px solid #21262d;
+            padding: 1rem;
+            border-radius: 6px;
+            background: #161b22;
+            min-height: 200px;
+        }
+
+        .highlight {
+            color: #7ee787;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HashAnalyst <span class="highlight">// 0x7B</span></h1>
+        
+        <div class="search-box">
+            <input type="text" id="hashInput" placeholder="Entrez un hash (ex: 7b4a7d...)" />
+            <button id="searchButton">Analyser</button>
+        </div>
+
+        <div class="result-box" id="result">
+            <!-- Résultats ici via JS -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const hash = document.getElementById('hashInput').value;
+            const resultDiv = document.getElementById('result');
+            
+            // Simulation d'analyse
+            resultDiv.innerHTML = `
+                <h3>Résultat pour <span class="highlight">${hash}</span></h3>
+                <p>Type: SHA-256</p>
+                <p>Statut: <span style="color: #7ee787">Non corrompu</span></p>
+                <p>Dernière vérification: ${new Date().toLocaleString()}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
