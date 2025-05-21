@@ -2,82 +2,52 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>HashDirect 0x7B</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection Hash</title>
     <style>
-        /* Style DiegoAnalystic - Version Minimaliste */
         body {
-            background: #0a0e14;
-            color: #c0c9d5;
-            font-family: 'Courier New', monospace;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 2rem;
-            min-height: 100vh;
+            background-color: #f5f5f5;
         }
-
+        
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            border: 1px solid #2ea043;
-            border-radius: 8px;
-            padding: 30px;
-            background: #0d1117;
             text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
-        #hashInput {
-            width: 70%;
-            padding: 12px;
-            background: #161b22;
-            border: 1px solid #30363d;
-            color: #c9d1d9;
-            border-radius: 4px;
-            margin: 20px 0;
-            font-size: 16px;
-        }
-
-        #searchButton {
-            padding: 12px 25px;
-            background: #238636;
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
             color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
             border: none;
-            border-radius: 4px;
             cursor: pointer;
-            display: block;
-            margin: 0 auto;
         }
-
-        #searchButton:hover {
-            background: #2ea043;
+        
+        .btn:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>HashDirect <span style="color: #2ea043;">// 0x7B</span></h1>
-        
-        <!-- Formulaire redirigeant directement -->
-        <form id="hashForm" action="https://diegoanalystic.github.io/hashenterparlutilisateur.html" method="GET">
-            <input 
-                type="text" 
-                id="hashInput" 
-                name="hash" 
-                placeholder="Entrez un hash (ex: 7b4a7d...)" 
-                autofocus 
-                required 
-            />
-            <button type="submit" id="searchButton">Analyser</button>
-        </form>
+        <h2>Page de redirection</h2>
+        <p>Cliquez sur le bouton pour accéder à la page hash.html</p>
+        <button class="btn" onclick="window.location.href='https://euphonious-crumble-d53c74.netlify.app/hash.html'">
+            Accéder à hash.html
+        </button>
     </div>
-
-    <!-- Validation optionnelle du format -->
-    <script>
-        document.getElementById('hashForm').addEventListener('submit', function(e) {
-            const hash = document.getElementById('hashInput').value;
-            if (!/^[a-fA-F0-9]{32,64}$/.test(hash)) {
-                alert("Erreur : Format de hash invalide (32 à 64 caractères hexadécimaux).");
-                e.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>
